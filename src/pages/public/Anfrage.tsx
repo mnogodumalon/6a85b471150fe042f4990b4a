@@ -9,7 +9,13 @@ import {
   type PublicPageConfig,
 } from '@/lib/publicClient';
 import { tx } from '@/i18n';
-import { IconAlertCircle, IconArrowLeft, IconArrowRight, IconCheck, IconZap } from '@tabler/icons-react';
+import {
+  IconAlertCircle,
+  IconArrowLeft,
+  IconArrowRight,
+  IconCheck,
+  IconBolt,
+} from '@tabler/icons-react';
 
 // Slug: anfrage
 // Flow: 3-Schritt-Wizard — 1) Problem beschreiben, 2) Einsatzort, 3) Kontaktdaten
@@ -28,13 +34,6 @@ interface FormData {
   erreichbarkeit: string;
 }
 
-const DRINGLICHKEIT_OPTIONS = [
-  { key: 'nicht_dringend', label: tx('Nicht dringend – kann warten') },
-  { key: 'normal', label: tx('Normal – innerhalb der nächsten Tage') },
-  { key: 'dringend', label: tx('Dringend – so bald wie möglich') },
-  { key: 'notfall', label: tx('Notfall – sofortiger Einsatz nötig') },
-] as const;
-
 const DRINGLICHKEIT_TONE: Record<string, string> = {
   nicht_dringend: 'border-slate-200 bg-slate-50 text-slate-700',
   normal: 'border-blue-200 bg-blue-50 text-blue-800',
@@ -50,6 +49,13 @@ const DRINGLICHKEIT_SELECTED: Record<string, string> = {
 };
 
 export default function Anfrage() {
+  const DRINGLICHKEIT_OPTIONS = [
+  { key: 'nicht_dringend', label: tx('Nicht dringend – kann warten') },
+  { key: 'normal', label: tx('Normal – innerhalb der nächsten Tage') },
+  { key: 'dringend', label: tx('Dringend – so bald wie möglich') },
+  { key: 'notfall', label: tx('Notfall – sofortiger Einsatz nötig') },
+] as const;
+
   const [cfg, setCfg] = useState<PublicPagesConfig | null>(null);
   const [page, setPage] = useState<PublicPageConfig | null>(null);
   const [loading, setLoading] = useState(true);
@@ -139,8 +145,8 @@ export default function Anfrage() {
     if (!valid) return;
     if (step === 2) {
       // Warm up challenge before last step
-      const ep = page.endpoints?.find(e => e.op === 'create');
-      if (cfg && page && ep) prepareChallenge(cfg, page, 'POST', `/apps/${ep.app_id}/records`);
+      const ep = (page as PublicPageConfig).endpoints?.find(e => e.op === 'create');
+      if (ep) prepareChallenge(cfg as PublicPagesConfig, page as PublicPageConfig, 'POST', `/apps/${ep.app_id}/records`);
     }
     setStep(s => s + 1);
     scrollTop();
@@ -171,7 +177,7 @@ export default function Anfrage() {
       if (form.email.trim()) payload.email = form.email.trim();
       if (form.erreichbarkeit.trim()) payload.erreichbarkeit = form.erreichbarkeit.trim();
 
-      await createPublicRecord(cfg, page, payload);
+      await createPublicRecord(cfg as PublicPagesConfig, page as PublicPageConfig, payload);
       setSubmitted(true);
       scrollTop();
     } catch {
@@ -283,7 +289,7 @@ export default function Anfrage() {
                         selected ? DRINGLICHKEIT_SELECTED[opt.key] : DRINGLICHKEIT_TONE[opt.key],
                       ].join(' ')}
                     >
-                      {opt.key === 'notfall' && <IconZap size={14} className="inline mr-1 mb-0.5 shrink-0" />}
+                      {opt.key === 'notfall' && <IconBolt size={14} className="inline mr-1 mb-0.5 shrink-0" />}
                       {opt.label}
                     </button>
                   );
@@ -519,7 +525,7 @@ export default function Anfrage() {
                   'w-full rounded-lg border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary transition',
                   errors.email ? 'border-red-400' : 'border-border',
                 ].join(' ')}
-                placeholder="maria@beispiel.de"
+                placeholder={tx('maria@beispiel.de')}
                 value={form.email}
                 onChange={e => set('email', e.target.value)}
               />
