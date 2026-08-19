@@ -1,0 +1,12 @@
+{
+  "pages": [
+    {
+      "file": "src/pages/public/Anfrage.tsx",
+      "component": "Anfrage",
+      "slug": "anfrage",
+      "ok": true,
+      "blocked": false,
+      "error": null
+    }
+  ]
+}

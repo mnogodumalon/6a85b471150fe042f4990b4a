@@ -1,0 +1,16 @@
+{
+  "entities": {
+    "Serviceanfrage": {
+      "placeholders_set": 10,
+      "defaults_keys": ["dringlichkeit"],
+      "computed_keys": [],
+      "reason": "Reine Kontaktanfrage-Erfassung, keine Mengen/Preise/Dauern. Nur Lookup-Default für Dringlichkeit."
+    },
+    "Auftragsverwaltung": {
+      "placeholders_set": 4,
+      "defaults_keys": ["erledigt"],
+      "computed_keys": [],
+      "reason": "Reine Tracking-Entity, kein numerisches Feld, keine applookup-Preis-Kette. Bool-Default für Erledigt-Status."
+    }
+  }
+}

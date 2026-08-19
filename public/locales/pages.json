@@ -1,0 +1,32 @@
+{
+  "pages": {
+    "en": {
+      "Alle Aufträge erledigt — super gemacht!": "All orders completed — great job!",
+      "Als erledigt markieren": "Mark as done",
+      "Anfrage": "Request",
+      "Anfrage öffnen": "Open request",
+      "Dringend": "Urgent",
+      "Einsatzorte": "Job sites",
+      "Erledigt": "Done",
+      "Heute erledigt": "Done today",
+      "Keine offenen Anfragen – heute alles erledigt!": "No open requests – all done for today!",
+      "Neue Anfrage": "New Request",
+      "Neuer Auftrag": "New Order",
+      "Nicht dringend": "Non-urgent",
+      "Notfall": "Emergency",
+      "Offen": "Open",
+      "Offene Aufträge": "Open orders",
+      "Sofortiger Einsatz nötig!": "Immediate action required!",
+      "Unbekannt": "Unknown",
+      "als erledigt markiert": "marked as done",
+      "haben dringende Anfragen eingereicht.": "have submitted urgent requests.",
+      "hat eine dringende Anfrage eingereicht.": "has submitted an urgent request.",
+      "{0} Notfälle – sofortiger Einsatz nötig!": "{0} emergencies – immediate action required!",
+      "{0} offene Anfragen – alles im Griff.": "{0} open requests – everything under control.",
+      "{0} – dringende Anfrage wartet.": "{0} – urgent request pending.",
+      "{0} – dringende Anfragen warten.": "{0} – urgent requests pending.",
+      "✓ Erledigt": "✓ Done"
+    }
+  },
+  "v": 1
+}

@@ -1,0 +1,21 @@
+{
+  "ServiceanfrageDialog.tsx": {
+    "problembeschreibung": "Beschreibe das Problem detailliert...",
+    "dringlichkeit": "Wie dringend ist die Anfrage?",
+    "strasse": "z. B. Musterstraße",
+    "hausnummer": "z. B. 42a",
+    "plz": "z. B. 10115",
+    "ort": "z. B. Berlin",
+    "vorname": "z. B. Max",
+    "nachname": "z. B. Mustermann",
+    "telefon": "z. B. +49 30 123456",
+    "email": "z. B. max@example.de",
+    "erreichbarkeit": "z. B. Mo–Fr 9–17 Uhr"
+  },
+  "AuftragsverwaltungDialog.tsx": {
+    "anfrage": "Welche Anfrage gehört dazu?",
+    "erledigt": "Markiere als abgeschlossen",
+    "erledigungsdatum": "Wann wurde es erledigt?",
+    "notizen": "Arbeitsschritte, Befunde, Ersatzteile..."
+  }
+}

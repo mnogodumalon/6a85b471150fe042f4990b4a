@@ -1,0 +1,7 @@
+{"debug":"Calling MCP tool: build_public_pages","timestamp":"2026-08-19T13:50:40.703Z","sessionId":"ce3abad7-ff23-4780-8ac4-e11ec4c8145e","cwd":"/home/user/app"}
+{"debug":"Tool 'build_public_pages' completed successfully in 10ms","timestamp":"2026-08-19T13:50:40.713Z","sessionId":"ce3abad7-ff23-4780-8ac4-e11ec4c8145e","cwd":"/home/user/app"}
+{"debug":"Calling MCP tool: build_intent_pages","timestamp":"2026-08-19T13:50:57.395Z","sessionId":"ce3abad7-ff23-4780-8ac4-e11ec4c8145e","cwd":"/home/user/app"}
+{"debug":"Tool 'build_intent_pages' still running (30s elapsed)","timestamp":"2026-08-19T13:51:27.398Z","sessionId":"ce3abad7-ff23-4780-8ac4-e11ec4c8145e","cwd":"/home/user/app"}
+{"debug":"Tool 'build_intent_pages' still running (60s elapsed)","timestamp":"2026-08-19T13:51:57.400Z","sessionId":"ce3abad7-ff23-4780-8ac4-e11ec4c8145e","cwd":"/home/user/app"}
+{"debug":"Tool 'build_intent_pages' still running (90s elapsed)","timestamp":"2026-08-19T13:52:27.401Z","sessionId":"ce3abad7-ff23-4780-8ac4-e11ec4c8145e","cwd":"/home/user/app"}
+{"debug":"Tool 'build_intent_pages' completed successfully in 1m 55s","timestamp":"2026-08-19T13:52:52.982Z","sessionId":"ce3abad7-ff23-4780-8ac4-e11ec4c8145e","cwd":"/home/user/app"}
