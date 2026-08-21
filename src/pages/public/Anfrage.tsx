@@ -40,16 +40,16 @@ const EMPTY_FORM: FormState = {
   erreichbarkeit: '',
 };
 
-const DRINGLICHKEIT_OPTIONS = [
+// --- Component ---
+
+export default function Anfrage() {
+  const DRINGLICHKEIT_OPTIONS = [
   { key: 'nicht_dringend', label: tx('Nicht dringend – kann warten') },
   { key: 'normal', label: tx('Normal – innerhalb der nächsten Tage') },
   { key: 'dringend', label: tx('Dringend – so bald wie möglich') },
   { key: 'notfall', label: tx('Notfall – sofortiger Einsatz nötig') },
 ];
 
-// --- Component ---
-
-export default function Anfrage() {
   const [cfg, setCfg] = useState<PublicPagesConfig | null>(null);
   const [page, setPage] = useState<PublicPageConfig | null>(null);
   const [loading, setLoading] = useState(true);
