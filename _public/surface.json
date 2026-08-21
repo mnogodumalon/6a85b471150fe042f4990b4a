@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "slug": "anfrage",
+      "component": "Anfrage",
+      "title": "Serviceanfrage",
+      "endpoints": [
+        {
+          "entity": "serviceanfrage",
+          "op": "create",
+          "fields": [
+            "problembeschreibung",
+            "dringlichkeit",
+            "strasse",
+            "hausnummer",
+            "plz",
+            "ort",
+            "vorname",
+            "nachname",
+            "telefon",
+            "email",
+            "erreichbarkeit"
+          ],
+          "preset_fields": {}
+        }
+      ]
+    }
+  ]
+}

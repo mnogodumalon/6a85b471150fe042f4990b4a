@@ -307,7 +307,7 @@ function Step3({
         <Input
           value={form.email}
           onChange={e => onChange({ email: e.target.value })}
-          placeholder="max.mustermann@beispiel.de"
+          placeholder={tx('max.mustermann@beispiel.de')}
           type="email"
           autoComplete="email"
           inputMode="email"
@@ -373,20 +373,20 @@ function Confirmation({ form }: { form: FormState }) {
 function validate(form: FormState, step: number): Partial<Record<keyof FormState, string>> {
   const err: Partial<Record<keyof FormState, string>> = {};
   if (step === 1) {
-    if (!form.problembeschreibung.trim()) err.problembeschreibung = 'Bitte beschreiben Sie das Problem.';
-    if (!form.dringlichkeit) err.dringlichkeit = 'Bitte wählen Sie eine Dringlichkeit.';
+    if (!form.problembeschreibung.trim()) err.problembeschreibung = tx('Bitte beschreiben Sie das Problem.');
+    if (!form.dringlichkeit) err.dringlichkeit = tx('Bitte wählen Sie eine Dringlichkeit.');
   }
   if (step === 2) {
-    if (!form.strasse.trim()) err.strasse = 'Bitte geben Sie die Straße an.';
-    if (!form.hausnummer.trim()) err.hausnummer = 'Bitte geben Sie die Hausnummer an.';
-    if (!form.plz.trim()) err.plz = 'Bitte geben Sie die Postleitzahl an.';
-    if (!form.ort.trim()) err.ort = 'Bitte geben Sie den Ort an.';
+    if (!form.strasse.trim()) err.strasse = tx('Bitte geben Sie die Straße an.');
+    if (!form.hausnummer.trim()) err.hausnummer = tx('Bitte geben Sie die Hausnummer an.');
+    if (!form.plz.trim()) err.plz = tx('Bitte geben Sie die Postleitzahl an.');
+    if (!form.ort.trim()) err.ort = tx('Bitte geben Sie den Ort an.');
   }
   if (step === 3) {
-    if (!form.vorname.trim()) err.vorname = 'Bitte geben Sie Ihren Vornamen an.';
-    if (!form.nachname.trim()) err.nachname = 'Bitte geben Sie Ihren Nachnamen an.';
-    if (!form.telefon.trim()) err.telefon = 'Bitte geben Sie Ihre Telefonnummer an.';
-    if (form.email && !/\S+@\S+\.\S+/.test(form.email)) err.email = 'Bitte geben Sie eine gültige E-Mail-Adresse an.';
+    if (!form.vorname.trim()) err.vorname = tx('Bitte geben Sie Ihren Vornamen an.');
+    if (!form.nachname.trim()) err.nachname = tx('Bitte geben Sie Ihren Nachnamen an.');
+    if (!form.telefon.trim()) err.telefon = tx('Bitte geben Sie Ihre Telefonnummer an.');
+    if (form.email && !/\S+@\S+\.\S+/.test(form.email)) err.email = tx('Bitte geben Sie eine gültige E-Mail-Adresse an.');
   }
   return err;
 }
@@ -475,7 +475,7 @@ export default function Anfrage() {
       await createPublicRecord(cfg, page, payload);
       setDone(true);
     } catch {
-      setSubmitError('Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut.');
+      setSubmitError(tx('Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut.'));
     } finally {
       setSubmitting(false);
     }
