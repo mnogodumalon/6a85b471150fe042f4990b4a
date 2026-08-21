@@ -65,7 +65,16 @@ interface DringlichkeitOption {
   tone: string;
 }
 
-const DRINGLICHKEIT_OPTIONS: DringlichkeitOption[] = [
+function RequiredMark() {
+  return <span className="text-destructive ml-0.5">*</span>;
+}
+
+function FieldError({ msg }: { msg: string }) {
+  return <p className="text-sm text-destructive mt-1">{msg}</p>;
+}
+
+export default function Serviceanfrage() {
+  const DRINGLICHKEIT_OPTIONS: DringlichkeitOption[] = [
   {
     key: 'nicht_dringend',
     label: () => tx('Nicht dringend'),
@@ -96,15 +105,6 @@ const DRINGLICHKEIT_OPTIONS: DringlichkeitOption[] = [
   },
 ];
 
-function RequiredMark() {
-  return <span className="text-destructive ml-0.5">*</span>;
-}
-
-function FieldError({ msg }: { msg: string }) {
-  return <p className="text-sm text-destructive mt-1">{msg}</p>;
-}
-
-export default function Serviceanfrage() {
   const [cfg, setCfg] = useState<PublicPagesConfig | null>(null);
   const [page, setPage] = useState<PublicPageConfig | null>(null);
   const [pageLoading, setPageLoading] = useState(true);
