@@ -30,13 +30,6 @@ interface FormData {
   erreichbarkeit: string;
 }
 
-const DRINGLICHKEIT_OPTIONS: { key: string; label: string; sublabel: string }[] = [
-  { key: 'nicht_dringend', label: tx('Nicht dringend'), sublabel: tx('Kann warten') },
-  { key: 'normal', label: tx('Normal'), sublabel: tx('Innerhalb der nächsten Tage') },
-  { key: 'dringend', label: tx('Dringend'), sublabel: tx('So bald wie möglich') },
-  { key: 'notfall', label: tx('Notfall'), sublabel: tx('Sofortiger Einsatz nötig') },
-];
-
 const TONE_MAP: Record<string, string> = {
   nicht_dringend: 'bg-slate-100 border-slate-300 text-slate-700',
   normal:         'bg-sky-50 border-sky-300 text-sky-700',
@@ -53,6 +46,13 @@ const TONE_SELECTED: Record<string, string> = {
 // ─── Hauptkomponente ──────────────────────────────────────────────────────────
 
 export default function Anfrage() {
+  const DRINGLICHKEIT_OPTIONS: { key: string; label: string; sublabel: string }[] = [
+  { key: 'nicht_dringend', label: tx('Nicht dringend'), sublabel: tx('Kann warten') },
+  { key: 'normal', label: tx('Normal'), sublabel: tx('Innerhalb der nächsten Tage') },
+  { key: 'dringend', label: tx('Dringend'), sublabel: tx('So bald wie möglich') },
+  { key: 'notfall', label: tx('Notfall'), sublabel: tx('Sofortiger Einsatz nötig') },
+];
+
   const [cfg, setCfg]       = useState<PublicPagesConfig | null>(null);
   const [page, setPage]     = useState<PublicPageConfig | null>(null);
   const [loading, setLoading] = useState(true);
@@ -151,7 +151,7 @@ export default function Anfrage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!step3Valid()) return;
+    if (!step3Valid() || !cfg || !page) return;
     setSubmitting(true);
     setError(null);
     try {
@@ -408,7 +408,7 @@ export default function Anfrage() {
                 type="email"
                 value={form.email}
                 onChange={e => set('email', e.target.value)}
-                placeholder="max@beispiel.de"
+                placeholder={tx('max@beispiel.de')}
                 className={inputCls}
               />
             </div>
