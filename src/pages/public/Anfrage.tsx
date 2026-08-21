@@ -29,16 +29,16 @@ interface FormState {
   erreichbarkeit: string;
 }
 
-const DRINGLICHKEIT_OPTIONS: { key: string; label: string }[] = [
+// ── Hauptkomponente ──────────────────────────────────────────────────────────
+
+export default function Anfrage() {
+  const DRINGLICHKEIT_OPTIONS: { key: string; label: string }[] = [
   { key: 'nicht_dringend', label: '' },
   { key: 'normal',         label: '' },
   { key: 'dringend',       label: '' },
   { key: 'notfall',        label: '' },
 ];
 
-// ── Hauptkomponente ──────────────────────────────────────────────────────────
-
-export default function Anfrage() {
   const [cfg, setCfg] = useState<PublicPagesConfig | null>(null);
   const [page, setPage] = useState<PublicPageConfig | null>(null);
   const [loading, setLoading] = useState(true);
@@ -422,7 +422,7 @@ export default function Anfrage() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="max@beispiel.de"
+                  placeholder={tx('max@beispiel.de')}
                   value={form.email}
                   onChange={set('email')}
                 />
