@@ -1,0 +1,38 @@
+{
+  "pages": {
+    "en": {
+      "Alle Anfragen erledigt — großartig!": "All requests completed — great job!",
+      "Alles erledigt — super Arbeit!": "All done — great work!",
+      "Anfrage als erledigt markiert": "Request marked as completed",
+      "Anfrage wartet": "Request waiting",
+      "Anfragen nach Dringlichkeit": "Requests by urgency",
+      "Anfragen warten": "Requests waiting",
+      "Auftrag als erledigt markiert": "Order marked as completed",
+      "Auftrag anlegen": "Create order",
+      "Auftrag für {0} {1} angelegt": "Order created for {0} {1}",
+      "Dringlichkeit": "Urgency",
+      "Dringlichkeit geändert": "Urgency changed",
+      "Erledigt": "Completed",
+      "Erste Anfrage manuell aufnehmen": "Add first request manually",
+      "Gesamt": "Total",
+      "Heute erledigt": "Completed today",
+      "Keine Angabe": "Not specified",
+      "Neue Anfrage": "New Request",
+      "Neue Anfrage aufnehmen": "Add new request",
+      "Noch keine Anfragen": "No requests yet",
+      "Noch keine Anfragen — richte dein System ein.": "No requests yet — set up your system.",
+      "Notfälle": "Emergencies",
+      "Offen": "Open",
+      "Offene Anfragen": "Open Requests",
+      "Sobald Kunden eine Anfrage senden, erscheint sie hier.": "Once customers send a request, it will appear here.",
+      "Unbekannt": "Unknown",
+      "haben Notfälle gemeldet — sofortiger Einsatz nötig!": "have reported emergencies — immediate action required!",
+      "hat einen Notfall gemeldet — sofortiger Einsatz nötig!": "has reported an emergency — immediate action required!",
+      "warten auf Bearbeitung": "waiting for processing",
+      "wartet auf Bearbeitung": "waiting for processing",
+      "{0} offene {1}.": "{0} open {1}.",
+      "✓ Erledigt": "✓ Completed"
+    }
+  },
+  "v": 1
+}

@@ -1,0 +1,16 @@
+{
+  "entities": {
+    "Serviceanfrage": {
+      "placeholders_set": 11,
+      "defaults_keys": ["dringlichkeit"],
+      "computed_keys": [],
+      "reason": "Reine Datenerfassung (Adresse, Kontakt, Problembeschreibung, Dringlichkeit). Keine numerischen Felder, keine Applookup-Ketten, keine Zeitrechnung. Keine Berechnung möglich."
+    },
+    "Auftragsverwaltung": {
+      "placeholders_set": 4,
+      "defaults_keys": ["erledigungsdatum", "erledigt"],
+      "computed_keys": [],
+      "reason": "Reine Verwaltungs-Entity (Anfrage-Verknüpfung, Status-Bool, Erledigungsdatum, Notizen). Keine numerischen Felder, keine Preis-Applookups, keine berechenbaren Größen. Statusfeld bekommt False-Default für neue Einträge."
+    }
+  }
+}
