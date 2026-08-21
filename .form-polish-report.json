@@ -1,0 +1,18 @@
+{
+  "entities": {
+    "Serviceanfrage": {
+      "placeholders_set": 9,
+      "defaults_keys": [
+        "dringlichkeit"
+      ],
+      "computed_keys": [],
+      "reason": "Reine Stammdaten-Erfassung einer Einsatzanfrage. Keine Number-Felder, kein applookup auf Preis-Target, kein Datumpaar — nichts berechenbar."
+    },
+    "Auftragsverwaltung": {
+      "placeholders_set": 4,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Auftragsverwaltungs-Entität ohne Preisfelder oder berechenbare Beziehungen. Reine applookup-Referenz + Status + Datum + Notizen."
+    }
+  }
+}

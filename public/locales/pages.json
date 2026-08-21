@@ -1,0 +1,30 @@
+{
+  "pages": {
+    "en": {
+      "Alle Anfragen erledigt. Super!": "All requests done. Great!",
+      "Als erledigt markieren": "Mark as Done",
+      "Anfrage": "Request",
+      "Auftrag anlegen": "Create Order",
+      "Dringend": "Urgent",
+      "Erledigt": "Done",
+      "Gesamt": "Total",
+      "Keine Dringlichkeit": "No Urgency",
+      "Keine offenen Anfragen — alles erledigt!": "No open requests — all done!",
+      "Neue Anfrage": "New Request",
+      "Neue Anfrage erfassen": "Create New Request",
+      "Notfall": "Emergency",
+      "Notfälle": "Emergencies",
+      "Offen": "Open",
+      "Offene Anfragen": "Open Requests",
+      "Unbekannt": "Unknown",
+      "haben Notfälle gemeldet — sofortiger Einsatz nötig.": "have reported emergencies — immediate dispatch required.",
+      "hat einen Notfall gemeldet — sofortiger Einsatz nötig.": "has reported an emergency — immediate dispatch required.",
+      "{0} offene Anfragen.": "{0} open requests.",
+      "{0} — Notfall!": "{0} — Emergency!",
+      "{0} — als erledigt markiert": "{0} — marked as done",
+      "· In Bearbeitung": "· In Progress",
+      "✓ Erledigt": "✓ Done"
+    }
+  },
+  "v": 1
+}
