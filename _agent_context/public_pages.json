@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "slug": "anfrage",
+      "type": "custom",
+      "entity": "serviceanfrage",
+      "title": "Serviceanfrage",
+      "published": true,
+      "fields": [
+        "problembeschreibung",
+        "dringlichkeit",
+        "strasse",
+        "hausnummer",
+        "plz",
+        "ort",
+        "vorname",
+        "nachname",
+        "telefon",
+        "email",
+        "erreichbarkeit"
+      ]
+    },
+    {
+      "slug": "serviceanfrage",
+      "type": "custom",
+      "entity": "serviceanfrage",
+      "title": "Serviceanfrage",
+      "published": true,
+      "fields": [
+        "problembeschreibung",
+        "dringlichkeit",
+        "strasse",
+        "hausnummer",
+        "plz",
+        "ort",
+        "vorname",
+        "nachname",
+        "telefon",
+        "email",
+        "erreichbarkeit"
+      ]
+    }
+  ]
+}

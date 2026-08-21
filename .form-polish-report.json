@@ -1,0 +1,16 @@
+{
+  "entities": {
+    "Serviceanfrage": {
+      "placeholders_set": 10,
+      "defaults_keys": ["dringlichkeit"],
+      "computed_keys": [],
+      "reason": "Reine Stammdaten (Adresse, Kontakt, Problem-Beschreibung). Kein Number-Feld, keine Applookup-Ketten mit numerischen Targets → nichts berechenbar."
+    },
+    "Auftragsverwaltung": {
+      "placeholders_set": 4,
+      "defaults_keys": ["erledigt"],
+      "computed_keys": [],
+      "reason": "Reine Auftragsverwaltung (Anfrage-Link, Status, Datum, Notizen). Kein Number-Feld, Applookup zeigt auf reine Stammdaten-Entity ohne numerische Targets → nichts berechenbar."
+    }
+  }
+}
