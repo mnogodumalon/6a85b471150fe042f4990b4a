@@ -34,13 +34,6 @@ interface FormData {
   erreichbarkeit: string;
 }
 
-const DRINGLICHKEIT_OPTIONS: { key: Dringlichkeit; label: string; description: string }[] = [
-  { key: 'nicht_dringend', label: 'Nicht dringend', description: 'Kann warten' },
-  { key: 'normal',         label: 'Normal',         description: 'Innerhalb der nächsten Tage' },
-  { key: 'dringend',       label: 'Dringend',       description: 'So bald wie möglich' },
-  { key: 'notfall',        label: 'Notfall',         description: 'Sofortiger Einsatz nötig' },
-];
-
 const TONE: Record<Dringlichkeit, string> = {
   nicht_dringend: 'border-slate-300 bg-slate-50 text-slate-700',
   normal:         'border-blue-300 bg-blue-50 text-blue-700',
@@ -56,6 +49,13 @@ const TONE_SELECTED: Record<Dringlichkeit, string> = {
 };
 
 export default function Serviceanfrage() {
+  const DRINGLICHKEIT_OPTIONS: { key: Dringlichkeit; label: string; description: string }[] = [
+  { key: 'nicht_dringend', label: tx('Nicht dringend'), description: tx('Kann warten') },
+  { key: 'normal',         label: tx('Normal'),         description: tx('Innerhalb der nächsten Tage') },
+  { key: 'dringend',       label: tx('Dringend'),       description: tx('So bald wie möglich') },
+  { key: 'notfall',        label: tx('Notfall'),         description: tx('Sofortiger Einsatz nötig') },
+];
+
   const [cfg, setCfg]     = useState<PublicPagesConfig | null>(null);
   const [page, setPage]   = useState<PublicPageConfig | null>(null);
   const [loading, setLoading] = useState(true);
