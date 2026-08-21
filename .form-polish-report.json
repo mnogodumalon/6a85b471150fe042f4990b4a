@@ -1,0 +1,16 @@
+{
+  "entities": {
+    "Serviceanfrage": {
+      "placeholders_set": 11,
+      "defaults_keys": ["dringlichkeit"],
+      "computed_keys": [],
+      "reason": "Reine Stammdaten-Erfassung (Name, Adresse, Kontakt, Problembeschreibung). Keine Number-Felder, keine applookup-Ketten, kein Datumspaar — nichts berechenbar."
+    },
+    "Auftragsverwaltung": {
+      "placeholders_set": 4,
+      "defaults_keys": ["erledigt", "erledigungsdatum"],
+      "computed_keys": [],
+      "reason": "Tracking-Entity ohne Preisfeld oder Mengen-Semantik. 1 applookup auf Serviceanfrage (nur Referenz), 1 bool (Aktivitäts-Semantik), 1 date-Einzelfeld (SLA-Frist), 1 Textarea für Notizen. Keine Berechnung möglich."
+    }
+  }
+}

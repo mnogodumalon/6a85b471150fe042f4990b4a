@@ -1,0 +1,30 @@
+{
+  "pages": {
+    "en": {
+      "Alle Aufträge erledigt — gut gemacht!": "All Orders Done — Well Done!",
+      "Als erledigt markieren": "Mark as Done",
+      "Als erledigt markiert": "Marked as Done",
+      "Auftrag als erledigt markiert": "Order Marked as Done",
+      "Auftrag anlegen": "Create Order",
+      "Dringend": "Urgent",
+      "Dringlichkeit geändert": "Priority Changed",
+      "Erledigt": "Done",
+      "Erledigt melden": "Report as Done",
+      "Heute neu": "New Today",
+      "Keine dringenden Anfragen — alles im Griff!": "No Urgent Requests — Everything Under Control!",
+      "Neue Anfrage": "New Request",
+      "Neue Anfrage erfassen": "Capture New Request",
+      "Notfall": "Emergency",
+      "Notfälle": "Emergencies",
+      "Offen": "Open",
+      "Offene Notfälle & Dringende": "Open Emergencies & Urgent",
+      "Unbekannt": "Unknown",
+      "{0} offene Anfragen warten auf Bearbeitung.": "{0} open requests are waiting to be processed.",
+      "{0} — Notfall-Einsatz ausstehend!": "{0} — Emergency Dispatch Pending!",
+      "— Notfall-Einsatz! Sofort reagieren.": "— Emergency Dispatch! Respond Immediately.",
+      "— {0} Notfälle gleichzeitig offen.": "— {0} Emergencies Open Simultaneously.",
+      "✓ Erledigt": "✓ Done"
+    }
+  },
+  "v": 1
+}
