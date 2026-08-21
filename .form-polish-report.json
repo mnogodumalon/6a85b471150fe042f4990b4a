@@ -1,0 +1,16 @@
+{
+  "entities": {
+    "Serviceanfrage": {
+      "placeholders_set": 11,
+      "defaults_keys": ["dringlichkeit"],
+      "computed_keys": [],
+      "reason": "Reine Stammdaten-Erfassung (Kontakt + Adresse + Problembeschreibung). Keine Preis-, Mengen- oder Datumsbeziehungen. Keine numerischen oder berechenbaren Felder."
+    },
+    "Auftragsverwaltung": {
+      "placeholders_set": 4,
+      "defaults_keys": ["erledigungsdatum"],
+      "computed_keys": [],
+      "reason": "Verwaltungs-Entity für Status + Referenzverwaltung. Nur ein Datumfeld (erledigungsdatum) für Vorbelegung auf heute sinnvoll. Keine numerischen Felder, keine Produkt-/Aggregat-Beziehungen."
+    }
+  }
+}

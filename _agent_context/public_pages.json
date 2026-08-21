@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "slug": "anfrage",
+      "type": "custom",
+      "entity": "serviceanfrage",
+      "title": "Anfrage stellen",
+      "published": true,
+      "fields": [
+        "problembeschreibung",
+        "dringlichkeit",
+        "strasse",
+        "hausnummer",
+        "plz",
+        "ort",
+        "vorname",
+        "nachname",
+        "telefon",
+        "email",
+        "erreichbarkeit"
+      ]
+    }
+  ]
+}

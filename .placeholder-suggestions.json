@@ -1,0 +1,21 @@
+{
+  "ServiceanfrageDialog.tsx": {
+    "problembeschreibung": "Technischer Fehler, Symptome, Fehlercode...",
+    "dringlichkeit": "Notfall, Dringend, Normal, Wartbar",
+    "strasse": "z. B. Hauptstraße",
+    "hausnummer": "z. B. 42",
+    "plz": "z. B. 10115",
+    "ort": "z. B. Berlin",
+    "vorname": "z. B. Max",
+    "nachname": "z. B. Mustermann",
+    "telefon": "z. B. 030 123456",
+    "email": "z. B. max@example.de",
+    "erreichbarkeit": "z. B. Montag 9-17 Uhr"
+  },
+  "AuftragsverwaltungDialog.tsx": {
+    "anfrage": "Welche Anfrage bearbeiten?",
+    "erledigt": "Markiere als fertig",
+    "erledigungsdatum": "Wann ist es erledigt?",
+    "notizen": "Interne Memo, Status, Probleme..."
+  }
+}
