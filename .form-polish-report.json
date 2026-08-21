@@ -1,0 +1,16 @@
+{
+  "entities": {
+    "Serviceanfrage": {
+      "placeholders_set": 11,
+      "defaults_keys": ["dringlichkeit"],
+      "computed_keys": [],
+      "reason": "Reine Kontakt- und Stammdaten-Entity. Keine Zahlenfelder, keine Datumspaare, keine applookups mit Preis-Targets. Dringlichkeit hat klaren Anfangs-Status (normal). Kein computed sinnvoll."
+    },
+    "Auftragsverwaltung": {
+      "placeholders_set": 4,
+      "defaults_keys": ["erledigt"],
+      "computed_keys": [],
+      "reason": "Hub-Entity mit Applookup auf Serviceanfrage und bool-Statusfeld. Keine Zahlenfelder, kein Datumspaar, keine berechenbaren Größen. Erledigt-Flag auf false vorbelegung."
+    }
+  }
+}

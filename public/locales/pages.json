@@ -1,0 +1,33 @@
+{
+  "pages": {
+    "en": {
+      "Alles erledigt — keine offenen Anfragen.": "All done — no open requests.",
+      "Als erledigt markieren": "Mark as done",
+      "Anfrage": "Request",
+      "Anfrage erfassen": "Log request",
+      "Annehmen": "Accept",
+      "Auftrag anlegen": "Create order",
+      "Auftrag annehmen": "Accept order",
+      "Dringend": "Urgent",
+      "Eingehende Anfragen": "Incoming requests",
+      "Erledigt": "Done",
+      "Kein Ergebnis für diesen Filter.": "No results for this filter.",
+      "Keine offenen Anfragen — ruhiger Tag!": "No open requests — quiet day!",
+      "Keine offenen Aufträge.": "No open orders.",
+      "Laufende Aufträge": "Active orders",
+      "Neue Anfrage": "New request",
+      "Nicht dringend": "Not urgent",
+      "Notfall": "Emergency",
+      "Notfall: {0} braucht sofort Hilfe.": "Emergency: {0} needs immediate assistance.",
+      "Notfälle": "Emergencies",
+      "Offen": "Open",
+      "Unbekannt": "Unknown",
+      "Unbekannter Kunde": "Unknown customer",
+      "als erledigt markiert": "marked as done",
+      "melden Notfälle — sofortiger Einsatz nötig.": "report emergencies — immediate response required.",
+      "meldet einen Notfall — sofortiger Einsatz nötig.": "reports an emergency — immediate response required.",
+      "{0} offene Anfragen, {1} erledigt.": "{0} open requests, {1} done."
+    }
+  },
+  "v": 1
+}
