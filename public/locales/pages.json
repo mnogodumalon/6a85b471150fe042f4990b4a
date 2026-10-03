@@ -1,0 +1,32 @@
+{
+  "pages": {
+    "en": {
+      "Alles abgehakt — keine offenen Anfragen.": "All checked off — no open inquiries.",
+      "Als erledigt abhaken": "Mark as done",
+      "Anfrage": "Inquiry",
+      "Anfragen ohne Auftrag": "Inquiries without order",
+      "Auftrag abgehakt": "Order checked off",
+      "Auftrag anlegen": "Create order",
+      "Auftrag für {0} angelegt": "Order created for {0}",
+      "Auftrag offen": "Order open",
+      "Aufträge anlegen": "Create orders",
+      "Dringend: {0} wartet auf eine Rückmeldung.": "Urgent: {0} is waiting for a response.",
+      "Dringlichkeit geändert: {0}": "Urgency changed: {0}",
+      "Erledigt": "Done",
+      "Jede Anfrage hat einen Auftrag.": "Every inquiry has an order.",
+      "Keine offenen Aufträge.": "No open orders.",
+      "Neue Anfrage": "New inquiry",
+      "Neue Anfragen von {0} warten auf einen Auftrag.": "New inquiries from {0} are waiting for an order.",
+      "Noch kein Auftrag": "No order yet",
+      "Offen sind noch die Aufträge von {0}.": "Orders from {0} are still open.",
+      "Offene Aufträge": "Open orders",
+      "Ohne Auftrag": "No order",
+      "Unbekannt": "Unknown",
+      "{0} Aufträge angelegt": "{0} orders created",
+      "{0} warten dringend auf einen Auftrag.": "{0} are urgently waiting for an order.",
+      "{0} wartet dringend auf einen Auftrag.": "{0} is urgently waiting for an order.",
+      "✓ Erledigt": "✓ Done"
+    }
+  },
+  "v": 1
+}

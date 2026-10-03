@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "language": "de",
+  "understanding": {
+    "summary": "Eine kleine Anwendung für einen alleinarbeitenden Elektriker: Kunden schicken über die Webseite eine Serviceanfrage mit Problem, Dringlichkeit, Einsatzort und Kontaktdaten. Der Elektriker sieht alle Anfragen in der Übersicht, legt dazu einen Auftrag an und hakt ihn ab, sobald er erledigt ist.",
+    "roles": [
+      "Elektriker (Inhaber)",
+      "Kunde (Besucher der Webseite)"
+    ],
+    "main_tasks": [
+      "Anfrage über die Webseite entgegennehmen",
+      "Anfragen nach Dringlichkeit sichten",
+      "Auftrag zu einer Anfrage anlegen",
+      "Auftrag als erledigt abhaken"
+    ],
+    "platform_roles": [
+      {
+        "persona": "Elektriker (Inhaber)",
+        "role": "administrator",
+        "apps": [
+          "serviceanfrage",
+          "auftragsverwaltung"
+        ]
+      }
+    ]
+  },
+  "flows": [
+    {
+      "slug": "auftrag-anlegen",
+      "label": {
+        "de": "Auftrag zur Anfrage anlegen",
+        "en": "Create job for request"
+      },
+      "description": "Der Elektriker wählt eine eingegangene Serviceanfrage aus und legt dazu einen offenen Auftrag an.",
+      "priority": "must",
+      "writes": [
+        {
+          "entity": "auftragsverwaltung",
+          "op": "create",
+          "when": "always",
+          "fields": {
+            "anfrage": "picked",
+            "erledigt": "fixed:false",
+            "notizen": "user"
+          },
+          "needs": {}
+        }
+      ],
+      "required": [],
+      "brief": "# Flow `auftrag-anlegen` — Auftrag zur Anfrage anlegen\nDer Elektriker wählt eine eingegangene Serviceanfrage aus und legt dazu einen offenen Auftrag an.\n\n## Your hook — import it, never rebuild what it owns\n`import { useAuftragAnlegenFlow } from '@/lib/journey/flows/AuftragAnlegen';` — generated from the Schreibliste below. It OWNS the form(s), one record search per picked field (columns and filter from the plan) and the submit plan with every fixed and derived value. You compose: `flow.forms.<entity>` for <Bound>/<Field>, `{...flow.picks.<field>.select} {...flow.pick('<field>')}` (or `flow.pickMany` for a multi pick) for <EntitySelectStep>, `flow.validateStep(n)` in StepNav.onNext, `flow.submit` + `flow.formList` for SummaryStep/SuccessStep, `flow.reset()`. Options: `steps` (field → step), `items` (how a hit reads, per pick: anfrage), `initial`, `messages`. The hook's docblock in .lane-context.md shows the exact call. Never import servicePort, useStepForm, useJourneySubmit, useRecordSearch or useDashboardData in this page — check-intents refuses a page that uses the hook and any of them.\n\n## Steps (in this order)\n1. Serviceanfrage aus der Liste wählen (nach Dringlichkeit sortiert, ohne bestehenden Auftrag)\n2. Interne Notizen eintragen (optional)\n3. Auftrag anlegen\n\n## Schreibliste — the ONLY writes this flow makes (the gate compares your plan steps with this list)\n- creates `auftragsverwaltung`:\n    - `anfrage`: from the record the user picks in this flow\n    - `erledigt`: fixed value `false` — set it in the plan step's values, never ask\n    - `notizen`: the user enters it (bind it through the layer: form.field/…)\n\n## Reads\n- `serviceanfrage` columns nachname, vorname, problembeschreibung, dringlichkeit, strasse, hausnummer, plz, ort, telefon\n\n## Checks BEFORE the write (block the submit with the message when they fail)\n- unique (field=`auftragsverwaltung.anfrage`) — message: „Zu dieser Anfrage gibt es bereits einen Auftrag.“\n\n## Success page\n- shows: `auftragsverwaltung.anfrage`, `auftragsverwaltung.erledigt`\n- next flows to offer: `auftrag-erledigen`\n\n## Never write these — another flow or a tool owns them\n- `auftragsverwaltung.erledigungsdatum` (owner: intent `auftrag-erledigen`)\n"
+    },
+    {
+      "slug": "auftrag-erledigen",
+      "label": {
+        "de": "Auftrag abhaken",
+        "en": "Mark job as done"
+      },
+      "description": "Der Elektriker wählt einen offenen Auftrag, hakt ihn als erledigt ab und das heutige Erledigungsdatum wird gesetzt.",
+      "priority": "must",
+      "writes": [
+        {
+          "entity": "auftragsverwaltung",
+          "op": "update",
+          "when": "always",
+          "fields": {
+            "erledigt": "fixed:true",
+            "erledigungsdatum": "derived:today",
+            "notizen": "user"
+          },
+          "needs": {}
+        }
+      ],
+      "required": [],
+      "brief": "# Flow `auftrag-erledigen` — Auftrag abhaken\nDer Elektriker wählt einen offenen Auftrag, hakt ihn als erledigt ab und das heutige Erledigungsdatum wird gesetzt.\n\n## Your hook — import it, never rebuild what it owns\n`import { useAuftragErledigenFlow } from '@/lib/journey/flows/AuftragErledigen';` — generated from the Schreibliste below. It OWNS the form(s), one record search per picked field (columns and filter from the plan) and the submit plan with every fixed and derived value. You compose: `flow.forms.<entity>` for <Bound>/<Field>, `{...flow.picks.<field>.select} {...flow.pick('<field>')}` (or `flow.pickMany` for a multi pick) for <EntitySelectStep>, `flow.validateStep(n)` in StepNav.onNext, `flow.submit` + `flow.formList` for SummaryStep/SuccessStep, `flow.reset()`. Options: `steps` (field → step), `items` (how a hit reads, per pick), `initial`, `messages`. The hook's docblock in .lane-context.md shows the exact call. This flow CHANGES a record of `auftragsverwaltung`: `{...flow.picks.auftragsverwaltung.select} {...flow.pick('auftragsverwaltung')}` picks it, the hook prefills the form with its current values and updates THAT record — never a create step, never a list from useDashboardData. Never import servicePort, useStepForm, useJourneySubmit, useRecordSearch or useDashboardData in this page — check-intents refuses a page that uses the hook and any of them.\n\n## Steps (in this order)\n1. Offenen Auftrag wählen\n2. Notizen ergänzen (optional)\n3. Als erledigt abhaken\n\n## Schreibliste — the ONLY writes this flow makes (the gate compares your plan steps with this list)\n- updates `auftragsverwaltung`:\n    - `erledigt`: fixed value `true` — set it in the plan step's values, never ask\n    - `erledigungsdatum`: derived: today() — set it in the plan step, never ask\n    - `notizen`: the user enters it (bind it through the layer: form.field/…)\n\n## Reads\n- `auftragsverwaltung` columns anfrage, notizen, erledigt\n\n## Success page\n- shows: `auftragsverwaltung.erledigt`, `auftragsverwaltung.erledigungsdatum`\n- next flows to offer: `auftrag-anlegen`\n\n## Never write these — another flow or a tool owns them\n- `auftragsverwaltung.anfrage` (owner: intent `auftrag-anlegen`)\n"
+    }
+  ],
+  "public_pages": [
+    {
+      "slug": "serviceanfrage-senden",
+      "purpose": "Besucher schicken dem Elektriker eine Serviceanfrage: was kaputt ist, wie dringend, wo der Einsatzort liegt und wie sie erreichbar sind.",
+      "publish": true,
+      "lists": [],
+      "creates": [
+        {
+          "entity": "serviceanfrage",
+          "fields": {
+            "problembeschreibung": "user",
+            "strasse": "user",
+            "hausnummer": "user",
+            "plz": "user",
+            "ort": "user",
+            "einsatzort_geo": "user",
+            "vorname": "user",
+            "nachname": "user",
+            "telefon": "user",
+            "email": "user",
+            "erreichbarkeit": "user"
+          },
+          "fixed": {
+            "dringlichkeit": "nicht_dringend"
+          }
+        }
+      ],
+      "brief": "# Public page `serviceanfrage-senden`\nBesucher schicken dem Elektriker eine Serviceanfrage: was kaputt ist, wie dringend, wo der Einsatzort liegt und wie sie erreichbar sind.\n\n## Creates (declare exactly these in the surface)\n- `serviceanfrage`: visitor fields `problembeschreibung`, `strasse`, `hausnummer`, `plz`, `ort`, `einsatzort_geo`, `vorname`, `nachname`, `telefon`, `email`, `erreichbarkeit`; preset_fields {\"dringlichkeit\": \"nicht_dringend\"}\n\nPublish: yes\n"
+    }
+  ],
+  "tools": [
+    {
+      "id": "notfall-mail-senden",
+      "purpose": "Bei jeder neuen Serviceanfrage prüfen, ob die Dringlichkeit „Notfall“ oder „Dringend“ ist, und dann eine Hinweis-Mail an den Elektriker (Schlüsselinhaber) senden. Schreibt keine Felder."
+    }
+  ],
+  "covered_by_platform": [
+    {
+      "wish": "Anfragen in der Übersicht sehen",
+      "feature": "list_page"
+    },
+    {
+      "wish": "Anfragen nach Dringlichkeit auswerten",
+      "feature": "distribution_view"
+    },
+    {
+      "wish": "Erledigte Aufträge abhaken",
+      "feature": "record_form"
+    },
+    {
+      "wish": "Anfragen durchsuchen und sortieren",
+      "feature": "search_filter"
+    }
+  ],
+  "ownership": {
+    "auftragsverwaltung": {
+      "anfrage": "intent:auftrag-anlegen",
+      "erledigt": "intent:auftrag-erledigen",
+      "notizen": "intent:auftrag-erledigen",
+      "erledigungsdatum": "intent:auftrag-erledigen"
+    }
+  },
+  "dashboard": {
+    "focus": [
+      "Offene Aufträge",
+      "Neue Anfragen nach Dringlichkeit",
+      "Notfälle und dringende Anfragen zuerst"
+    ],
+    "hints": [
+      "Notfälle und dringende Anfragen hervorheben",
+      "Aufträge ohne Erledigung als offen zeigen",
+      "Anfragen ohne Auftrag sichtbar machen"
+    ]
+  }
+}
