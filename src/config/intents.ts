@@ -20,6 +20,7 @@
 import type { ComponentType } from 'react';
 
 // <custom:intent-imports>
+import { IconClipboardPlus, IconChecklist } from '@tabler/icons-react';
 // </custom:intent-imports>
 
 export interface IntentLink {
@@ -42,6 +43,8 @@ export interface IntentLink {
 
 export const INTENTS: IntentLink[] = [
   // <custom:intents>
+  { path: '/intents/auftrag-anlegen', label: { de: 'Auftrag zur Anfrage anlegen', en: 'Create job for request' }, icon: IconClipboardPlus, description: 'Zu einer Serviceanfrage einen offenen Auftrag anlegen' },
+  { path: '/intents/auftrag-erledigen', label: { de: 'Auftrag abhaken', en: 'Mark job as done' }, icon: IconChecklist, description: 'Offenen Auftrag als erledigt abhaken' },
   // </custom:intents>
 ];
 
@@ -52,7 +55,7 @@ export const INTENTS: IntentLink[] = [
  * purpose — a scaffold update resets it to false (self-healing if Phase 2
  * never ran).
  */
-export const INTENTS_PENDING = true;
+export const INTENTS_PENDING = false;
 
 /**
  * When the Phase-1 bundle was deployed (ISO, set by the service together with

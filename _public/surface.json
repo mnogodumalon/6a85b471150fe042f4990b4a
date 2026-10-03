@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "pages": [
+    {
+      "slug": "serviceanfrage-senden",
+      "component": "ServiceanfrageSenden",
+      "title": "Serviceanfrage senden",
+      "endpoints": [
+        {
+          "entity": "serviceanfrage",
+          "op": "create",
+          "fields": [
+            "problembeschreibung",
+            "strasse",
+            "hausnummer",
+            "plz",
+            "ort",
+            "einsatzort_geo",
+            "vorname",
+            "nachname",
+            "telefon",
+            "email",
+            "erreichbarkeit"
+          ],
+          "preset_fields": {
+            "dringlichkeit": "nicht_dringend"
+          }
+        }
+      ]
+    }
+  ]
+}

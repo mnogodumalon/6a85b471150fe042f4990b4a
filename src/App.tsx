@@ -14,6 +14,9 @@ import { IntentPolicyLoader } from '@/components/IntentPolicyLoader';
 import IntentsAdmin from '@/pages/IntentsAdmin';
 import AppMap from '@/pages/AppMap';
 // <custom:imports>
+const IntentAuftragAnlegenPage = lazy(() => import('@/pages/intents/AuftragAnlegenPage'));
+import { DashboardSkeleton } from '@/components/DashboardStates';
+const IntentAuftragErledigenPage = lazy(() => import('@/pages/intents/AuftragErledigenPage'));
 // </custom:imports>
 
 // Lazy: public pages live outside <Layout> and only load on /#/public/:slug —
@@ -85,6 +88,8 @@ export default function App() {
                 <Route path="verwaltung/oeffentliche-seiten" element={<PublicPagesAdmin />} />
                 <Route path="verwaltung/oeffentliche-seiten/:slug/felder" element={<PublicPageFields />} />
                 {/* <custom:routes> */}
+                <Route path="intents/auftrag-anlegen" element={<Suspense fallback={<DashboardSkeleton />}><IntentAuftragAnlegenPage /></Suspense>} />
+                <Route path="intents/auftrag-erledigen" element={<Suspense fallback={<DashboardSkeleton />}><IntentAuftragErledigenPage /></Suspense>} />
                 {/* </custom:routes> */}
                 {/* An unknown hash (a bookmark from before a rebuild renamed the
                     flows, a mistyped link) must not be a blank page. */}
