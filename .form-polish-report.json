@@ -1,0 +1,18 @@
+{
+  "entities": {
+    "Serviceanfrage": {
+      "placeholders_set": 9,
+      "defaults_keys": [
+        "dringlichkeit"
+      ],
+      "computed_keys": [],
+      "reason": "Keine Formeln, da die Serviceanfrage nur Kontakt- und Textdaten ohne numerische Berechnungskette enthält."
+    },
+    "Auftragsverwaltung": {
+      "placeholders_set": 3,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Keine Formeln, da das Formular keine numerischen Felder oder Datumspaare enthält und erledigungsdatum erst beim Abschluss gesetzt wird."
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "pages": {
+    "en": {
+      "Alle Anfragen sind in Bearbeitung.": "All requests are being processed.",
+      "Alles erledigt — keine offenen Anfragen oder Aufträge.": "All done — no open requests or jobs.",
+      "Als erledigt markieren": "Mark as completed",
+      "Anfragen ohne Auftrag": "Requests without job",
+      "Auftrag": "Job",
+      "Auftrag anlegen": "Create job",
+      "Auftrag für {0}": "Job for {0}",
+      "Auftrag für {0} angelegt": "Job created for {0}",
+      "Dringend": "Urgent",
+      "Erledigt": "Completed",
+      "In Arbeit": "In progress",
+      "Keine offenen Aufträge.": "No open jobs.",
+      "Neu eingegangen: {0} — noch ohne Auftrag.": "Newly received: {0} — no job yet.",
+      "Neue Anfrage": "New request",
+      "Notfall": "Emergency",
+      "Offen in Arbeit: {0}.": "Open in progress: {0}.",
+      "Offene Aufträge": "Open jobs",
+      "Ohne Auftrag": "No job",
+      "melden Notfälle — noch ohne Auftrag.": "report emergencies — no job yet.",
+      "meldet einen Notfall — seit {0} ohne Auftrag.": "reports an emergency — no job for {0}.",
+      "{0} brauchen sofort einen Einsatz.": "{0} need immediate dispatch.",
+      "{0} erledigt": "{0} completed",
+      "✓ Erledigt": "✓ Completed"
+    }
+  },
+  "v": 1
+}
